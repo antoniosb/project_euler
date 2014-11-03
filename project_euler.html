@@ -53,50 +53,87 @@
       }
       return largest;
     }
+    function showProblem(param){
+      var elem = document.getElementById(param);
+      if(param=='p1'){
+        elem.innerHTML = problem1();
+      }else if(param=='p2'){
+        elem.innerHTML = problem2();
+      }else if(param=='p3'){
+        elem.innerHTML = problem3();
+      }else{
+        elem.innerHTML = 'DID NOT FOUND!';
+      }
+      elem.style.color = 'green' ;
+      elem.style.border = 'none';
+    }
   </script>
   <h1>Project Euler first three problems: </h1>
-  <div class='problem1'>
-    <a href="https://projecteuler.net/problem=1">Problem1:</a>
-    <h3>
-      The sum of all the multiples of 3 or 5 bellow 1000 is: <script type="text/javascript">document.write(problem1())</script>
-    </h3>
+  <div class='problem1 content'>
+    <h3><a href="https://projecteuler.net/problem=1">Problem1:</a></h3>
+    <p>
+      The sum of all the multiples of 3 or 5 bellow 1000 is: <span id='p1' onclick="showProblem('p1')">Show Result</span>
+    </p>
   </div>
-  <div class='problem2'>
-    <a href="https://projecteuler.net/problem=2">Problem2:</a>
-    <h3>
-      The sum of even-valued fibonacci terms bellow 4000000 is: <script type="text/javascript">document.write(problem2())</script>
-    </h3>
+  <div class='problem2 content'>
+    <h3><a href="https://projecteuler.net/problem=2">Problem2:</a></h3>
+    <p>
+      The sum of even-valued fibonacci terms bellow 4000000 is: <span id='p2' onclick="showProblem('p2')">Show Result</span>
+    </p>
   </div>
-  <div class='problem3'>
-    <a href="https://projecteuler.net/problem=3">Problem3:</a>
-    <h3>
-      The sum of all the multiples of 3 or 5 bellow 1000 is: <script type="text/javascript">document.write(problem3())</script>
-    </h3>
-  </div>
+  <div class='problem3 content'>
+    <h3><a href="https://projecteuler.net/problem=3">Problem3:</a></h3>
+    <p>
+      The sum of all the multiples of 3 or 5 bellow 1000 is: <span id='p3' onclick="showProblem('p3')">Show Result</span>
+    </p>
+  </div>  
 </body>
 <style type="text/css">
-  div{
-    margin: 0 auto;
-    border: 1px solid black;
-    width: 60%;
-    padding: 20px;
+  body{
+    background-color: #BABABC;  
   }
-  a{
-    padding: 10px;
-    text-decoration: none;
-  }
-  a:viisted{
-    text-decoration: none;
-  }
-  a:hover{
-    text-decoration: none;
-  }
-  h3{
-    line-height: 60%;
+  span{
+    color: #ccc;
+    border: 1px solid #ccc;
+    font-style: italic;
   }
   h1{
-    padding: 20px;
-    color: #3434df;
+    background-color: #0F3C27;
+    color: white;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    font-family: Helvetica;
+    height: 50px;
+  }
+  .problem1{
+    background-color: #688F3C;
+    top: 50px;
+  }
+  .problem2{
+    background-color: #B2CA7E;
+    top: 210px;
+  }
+  .problem3{
+    background-color: #F0EEF1;
+    top: 370px;
+  }
+  .content{
+    position: absolute;
+    width: 100%;
+    font-family: 'Courier New', Courier;
+  }
+  a{
+    text-decoration: none;
+  }
+  h3,p{
+    padding-left:15px;
+  }
+  p{
+    line-height: 3.6em;
+    font-size: 22px;
   }
 </style>
 </html>
