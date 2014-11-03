@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>
+    The Odin Project
+  </title>
+</head>
+<body>
+  <script type="text/javascript">
+    function problem1(){
+      var sum = 0;
+      for(i=1; i < 1000; i++){
+        if(i%3==0 || i%5==0){
+          sum += i;
+        }
+      }
+      return sum;
+    }
+
+    function problem2(){
+      var sum=0;
+      var i=1;
+      while(fibonacci(i) < 4000000){
+        tmp = fibonacci(i);
+        if(tmp % 2 == 0){
+          sum += tmp;
+        }
+        i++;
+      }
+      return sum;
+    }
+
+    function fibonacci(number){
+      if(number < 2){
+        return 1; 
+      }else{
+        return fibonacci(number-1) + fibonacci(number-2);
+      }  
+    }
+
+    function problem3(){
+      var number = 600851475143;
+      var divisor = 2;
+      var largest = 1;
+      while(number > 1){
+        if(number % divisor == 0){
+          number = number/divisor;
+          largest = divisor;
+          divisor = 2;
+        }else{
+          divisor += 1;
+        }
+      }
+      return largest;
+    }
+  </script>
+  <h1>Project Euler first three problems: </h1>
+  <div class='problem1'>
+    <a href="https://projecteuler.net/problem=1">Problem1:</a>
+    <h3>
+      The sum of all the multiples of 3 or 5 bellow 1000 is: <script type="text/javascript">document.write(problem1())</script>
+    </h3>
+  </div>
+  <div class='problem2'>
+    <a href="https://projecteuler.net/problem=2">Problem2:</a>
+    <h3>
+      The sum of even-valued fibonacci terms bellow 4000000 is: <script type="text/javascript">document.write(problem2())</script>
+    </h3>
+  </div>
+  <div class='problem3'>
+    <a href="https://projecteuler.net/problem=3">Problem3:</a>
+    <h3>
+      The sum of all the multiples of 3 or 5 bellow 1000 is: <script type="text/javascript">document.write(problem3())</script>
+    </h3>
+  </div>
+</body>
+<style type="text/css">
+  div{
+    margin: 0 auto;
+    border: 1px solid black;
+    width: 60%;
+    padding: 20px;
+  }
+  a{
+    padding: 10px;
+    text-decoration: none;
+  }
+  a:viisted{
+    text-decoration: none;
+  }
+  a:hover{
+    text-decoration: none;
+  }
+  h3{
+    line-height: 60%;
+  }
+  h1{
+    padding: 20px;
+    color: #3434df;
+  }
+</style>
+</html>
